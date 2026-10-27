@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Laporan Sirkulasi</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 11px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 4px;
+            text-align: left;
+        }
+
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Laporan Sirkulasi</h3>
+
+    <table>
+        <thead>
+            <tr>
+                @foreach ($headers as $header)
+                    <th>{{ $header }}</th>
+                @endforeach
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($rows as $row)
+                <tr>
+                    @foreach ($row as $cell)
+                        <td>{{ $cell }}</td>
+                    @endforeach
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+</body>
+
+</html>
